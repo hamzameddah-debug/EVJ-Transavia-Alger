@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVJ Transavia - Alger</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .container { background: white; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); width: 100%; max-width: 1400px; display: none; }
+        .container.active { display: block; }
+        .auth-screen { min-height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .auth-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .auth-box h1 { color: #667eea; margin-bottom: 10px; font-size: 28px; }
+        .auth-box .subtitle { color: #888; margin-bottom: 30px; font-size: 14px; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; color: #333; font-weight: 500; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: #667eea; }
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .btn:hover { background: #5568d3; }
+        .btn-secondary { background: #999; }
+        .btn-secondary:hover { background: #777; }
+        .error { color: #d32f2f; padding: 10px; background: #ffebee; border-radius: 5px; margin-bottom: 15px; display: none; }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .header h1 { font-size: 24px; }
+        .btn-logout { background: #ff6b6b; padding: 8px 15px; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .content { padding: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 1024px) { .content { grid-template-columns: 1fr; } }
+        .form-section { background: #f5f5f5; padding: 25px; border-radius: 8px; border-left: 4px solid #667eea; }
+        .form-section h2 { color: #333; margin-bottom: 20px; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .btn-submit { background: #4caf50; margin-top: 20px; }
+        .btn-submit:hover { background: #45a049; }
+        .table-section { background: white; padding: 25px; border-radius: 8px; }
+        .table-section h2 { color: #333; margin-bottom: 20px; }
+        .table-wrapper { overflow-x: auto; max-height: 600px; overflow-y: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        table th { padding: 12px; text-align: left; font-weight: bold; background: #f0f0f0; border-bottom: 2px solid #ddd; }
+        table td { padding: 10px; border-bottom: 1px solid #eee; }
+        .action-btn { padding: 5px 10px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; }
+        .summary-section { grid-column: 1 / -1; background: #eceff1; padding: 25px; border-radius: 8px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .summary-card { background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; text-align: center; }
+        .summary-card label { display: block; color: #888; font-size: 12px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 22px; font-weight: bold; color: #333; }
+        .success-message { padding: 15px; background: #c8e6c9; color: #2e7d32; border-radius: 5px; margin-bottom: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+<div id="authScreen" class="auth-screen">
+    <div class="auth-box">
+        <h1>🛫 TRANSAVIA</h1>
+        <p class="subtitle">État de Vente Journalier - Alger</p>
+        <div id="authError" class="error"></div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="hamza.meddah@gmail.com">
+        </div>
+        <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" id="password" placeholder="••••••••">
+        </div>
+        <button class="btn" onclick="login()">Se connecter</button>
+        <button class="btn btn-secondary" onclick="signup()">Créer un compte</button>
+    </div>
+</div>
+
+<div id="appContainer" class="container">
+    <div class="header">
+        <h1>📊 État de Vente Journalier</h1>
+        <div>
+            <span>👤 <strong id="userEmail"></strong></span>
+            <button class="btn-logout" onclick="logout()">Déconnexion</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="form-section">
+            <h2>📝 Nouvelle Entrée</h2>
+            <div class="success-message" id="successMessage">✓ Enregistré!</div>
+
+            <div class="form-group">
+                <label>Type</label>
+                <select id="transactionType">
+                    <option>BILLET</option>
+                    <option>SSR BILLET</option>
+                    <option>CHANG BILLET</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>PNR</label>
+                <input type="text" id="pnr" placeholder="ABC123" maxlength="6">
+            </div>
+
+            <div class="two-col">
+                <div class="form-group">
+                    <label>Montant (DA)</label>
+                    <input type="number" id="montant" min="0">
+                </div>
+                <div class="form-group">
+                    <label>Frais (DA)</label>
+                    <input type="number" id="fraisService" min="0">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Paiement</label>
+                <select id="typePaiement">
+                    <option>Espèces</option>
+                    <option>TPE</option>
+                    <option>Compte</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Client</label>
+                <select id="agenceClient">
+                    <option>AGENCE</option>
+                    <option>AEROPORT</option>
+                    <option>SKY TOURS</option>
+                </select>
+            </div>
+
+            <button class="btn btn-submit" onclick="addEntry()">💾 Enregistrer</button>
+        </div>
+
+        <div class="table-section">
+            <h2>📋 Entrées</h2>
+            <div class="table-wrapper">
+                <table id="entriesTable">
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>PNR</th>
+                            <th>Montant</th>
+                            <th>Paiement</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr><td colspan="5">Chargement...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2>💰 Résumé</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <label>Espèces</label>
+                    <div class="value" id="cashTotal">0 DA</div>
+                </div>
+                <div class="summary-card">
+                    <label>TPE</label>
+                    <div class="value" id="cardTotal">0 DA</div>
+                </div>
+                <div class="summary-card">
+                    <label>Compte</label>
+                    <div class="value" id="accountTotal">0 DA</div>
+                </div>
+                <div class="summary-card">
+                    <label>Total</label>
+                    <div class="value" id="totalAmount">0 DA</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js';
+import { getFirestore, collection, addDoc, query, where, orderBy, onSnapshot, deleteDoc, doc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCjGIIgC4qi8uTrP-Pdp8NVlApz3QSbRIg",
+  authDomain: "evj-transavia-alger.firebaseapp.com",
+  projectId: "evj-transavia-alger",
+  storageBucket: "evj-transavia-alger.firebasestorage.app",
+  messagingSenderId: "192638126000",
+  appId: "1:192638126000:web:6cbe921b5f4b6e04d57875"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+console.log("✅ Firebase OK");
+
+let currentUser = null;
+let currentDate = new Date().toISOString().split('T')[0];
+let allEntries = [];
+
+window.login = function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    if (!email || !password) { showError('Remplissez les champs'); return; }
+    signInWithEmailAndPassword(auth, email, password)
+        .then(result => { currentUser = result.user; showApp(); })
+        .catch(error => {
+            if (error.code === 'auth/user-not-found') {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then(result => { currentUser = result.user; showApp(); })
+                    .catch(err => showError(err.message));
+            } else { showError(error.message); }
+        });
+};
+
+window.signup = function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    if (!email || !password) { showError('Remplissez'); return; }
+    createUserWithEmailAndPassword(auth, email, password)
+        .then(result => { currentUser = result.user; showApp(); })
+        .catch(error => showError(error.message));
+};
+
+window.logout = function() {
+    signOut(auth).then(() => { currentUser = null; showAuth(); });
+};
+
+function showError(msg) {
+    const err = document.getElementById('authError');
+    err.textContent = msg;
+    err.style.display = 'block';
+    setTimeout(() => err.style.display = 'none', 5000);
+}
+
+function showAuth() {
+    document.getElementById('authScreen').style.display = 'flex';
+    document.getElementById('appContainer').classList.remove('active');
+}
+
+function showApp() {
+    document.getElementById('authScreen').style.display = 'none';
+    document.getElementById('appContainer').classList.add('active');
+    document.getElementById('userEmail').textContent = currentUser.email;
+    refreshData();
+}
+
+window.addEntry = function() {
+    const pnr = document.getElementById('pnr').value.toUpperCase();
+    const montant = parseInt(document.getElementById('montant').value) || 0;
+    const fraisService = parseInt(document.getElementById('fraisService').value) || 0;
+    if (!pnr || montant <= 0) { alert('Remplissez'); return; }
+
+    const now = new Date();
+    const heure = now.toLocaleTimeString('fr-FR');
+
+    addDoc(collection(db, 'evj_entries'), {
+        date: currentDate,
+        agent_email: currentUser.email,
+        pnr: pnr,
+        montant: montant,
+        frais_service: fraisService,
+        type_paiement: document.getElementById('typePaiement').value,
+        agence_client: document.getElementById('agenceClient').value,
+        type_transaction: document.getElementById('transactionType').value,
+        heure: heure,
+        timestamp: serverTimestamp()
+    }).then(() => {
+        document.getElementById('pnr').value = '';
+        document.getElementById('montant').value = '';
+        document.getElementById('fraisService').value = '';
+        document.getElementById('successMessage').style.display = 'block';
+        setTimeout(() => document.getElementById('successMessage').style.display = 'none', 2000);
+        refreshData();
+    }).catch(error => alert('Erreur: ' + error.message));
+};
+
+window.deleteEntry = function(id) {
+    if (confirm('Supprimer?')) {
+        deleteDoc(doc(db, 'evj_entries', id)).then(() => refreshData()).catch(err => alert('Erreur'));
+    }
+};
+
+function refreshData() {
+    const q = query(
+        collection(db, 'evj_entries'),
+        where('date', '==', currentDate),
+        where('agent_email', '==', currentUser.email),
+        orderBy('timestamp', 'desc')
+    );
+
+    onSnapshot(q, (snapshot) => {
+        allEntries = [];
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = '';
+
+        snapshot.forEach(doc => {
+            const entry = doc.data();
+            entry.id = doc.id;
+            allEntries.push(entry);
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.heure}</td>
+                <td>${entry.pnr}</td>
+                <td>${entry.montant + entry.frais_service} DA</td>
+                <td>${entry.type_paiement}</td>
+                <td><button class="action-btn" onclick="deleteEntry('${entry.id}')">❌</button></td>
+            `;
+            tbody.appendChild(row);
+        });
+
+        if (allEntries.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5">Aucune entrée</td></tr>';
+        }
+
+        updateSummary();
+    });
+}
+
+function updateSummary() {
+    let cashTotal = 0, cardTotal = 0, accountTotal = 0, totalAmount = 0;
+
+    allEntries.forEach(entry => {
+        const total = entry.montant + entry.frais_service;
+        totalAmount += total;
+        if (entry.type_paiement === 'Espèces') cashTotal += total;
+        else if (entry.type_paiement === 'TPE') cardTotal += total;
+        else if (entry.type_paiement === 'Compte') accountTotal += total;
+    });
+
+    document.getElementById('cashTotal').textContent = cashTotal + ' DA';
+    document.getElementById('cardTotal').textContent = cardTotal + ' DA';
+    document.getElementById('accountTotal').textContent = accountTotal + ' DA';
+    document.getElementById('totalAmount').textContent = totalAmount + ' DA';
+}
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        currentUser = user;
+        showApp();
+    } else {
+        showAuth();
+    }
+});
+</script>
+
+</body>
+</html>
