@@ -656,7 +656,7 @@
         <button id="loginBtn" class="btn primary" type="button">Se connecter</button>
       </div>
       <p class="subtle">
-        Pour une vraie sécurité, créez les utilisateurs dans Firebase Authentication. Le mode local sert seulement à continuer la saisie sur ce poste si Firebase n'est pas encore prêt.
+        Pour une vraie sÃ©curitÃ©, crÃ©ez les utilisateurs dans Firebase Authentication. Le mode local sert seulement Ã  continuer la saisie sur ce poste si Firebase n'est pas encore prÃªt.
       </p>
       <div id="authAlerts" class="alert-stack"></div>
     </div>
@@ -672,7 +672,7 @@
         <span id="todayLabel" class="subtle" style="color:#dfe7ee;"></span>
         <span id="storageBadge" class="badge green">Firebase</span>
         <span class="user-chip"><strong id="userInitial">HM</strong><span id="userName">Hamza Meddah</span></span>
-        <button id="logoutBtn" class="btn danger" type="button">Déconnexion</button>
+        <button id="logoutBtn" class="btn danger" type="button">DÃ©connexion</button>
       </div>
     </header>
 
@@ -684,12 +684,12 @@
           <div class="section-title">
             <div>
               <h1>Nouvelle saisie EVJ</h1>
-              <p>Enregistrez les billets, échanges, SSR et remboursements de la journée.</p>
+              <p>Enregistrez les billets, Ã©changes, SSR et remboursements de la journÃ©e.</p>
             </div>
           </div>
 
           <div class="panel">
-            <h2>Opération</h2>
+            <h2>OpÃ©ration</h2>
             <div class="grid three">
               <div class="field">
                 <label for="entryDate">Date</label>
@@ -699,8 +699,8 @@
                 <label for="transactionType">Type de transaction</label>
                 <select id="transactionType">
                   <option value="BILLET">Billet vendu</option>
-                  <option value="CHANG BILLET">Billet échangé</option>
-                  <option value="SSR BILLET">SSR ajouté</option>
+                  <option value="CHANG BILLET">Billet Ã©changÃ©</option>
+                  <option value="SSR BILLET">SSR ajoutÃ©</option>
                   <option value="REMBOURSEMENT">Remboursement</option>
                 </select>
               </div>
@@ -719,10 +719,10 @@
               <div class="field">
                 <label for="typePaiement">Mode paiement</label>
                 <select id="typePaiement">
-                  <option value="Espèces">Espèces</option>
+                  <option value="EspÃ¨ces">EspÃ¨ces</option>
                   <option value="TPE">TPE</option>
                   <option value="En Compte">En Compte</option>
-                  <option value="Chèque">Chèque</option>
+                  <option value="ChÃ¨que">ChÃ¨que</option>
                 </select>
               </div>
               <div class="field">
@@ -734,7 +734,7 @@
                 <input id="entryNote" type="text" placeholder="Optionnel">
               </div>
               <div class="field">
-                <label>Total opération</label>
+                <label>Total opÃ©ration</label>
                 <input id="computedTotal" type="text" value="0 DA" disabled>
               </div>
             </div>
@@ -746,12 +746,12 @@
           </div>
 
           <div class="panel">
-            <h2>Résumé du jour</h2>
+            <h2>RÃ©sumÃ© du jour</h2>
             <div id="dayStats" class="stat-grid"></div>
           </div>
 
           <div class="panel">
-            <h2>Entrées du jour</h2>
+            <h2>EntrÃ©es du jour</h2>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -777,13 +777,13 @@
         <section id="cloture" class="section">
           <div class="section-title">
             <div>
-              <h1>Clôture journalière</h1>
-              <p>Préparez la fiche d'imputation et le détail à imprimer en fin de journée.</p>
+              <h1>ClÃ´ture journaliÃ¨re</h1>
+              <p>PrÃ©parez la fiche d'imputation et le dÃ©tail Ã  imprimer en fin de journÃ©e.</p>
             </div>
           </div>
 
           <div class="panel">
-            <h2>Paramètres de clôture</h2>
+            <h2>ParamÃ¨tres de clÃ´ture</h2>
             <div class="grid three">
               <div class="field">
                 <label for="closureDate">Date</label>
@@ -794,14 +794,14 @@
                 <select id="closureAgent"></select>
               </div>
               <div class="field">
-                <label for="closureReference">Référence clôture</label>
+                <label for="closureReference">RÃ©fÃ©rence clÃ´ture</label>
                 <input id="closureReference" type="text" placeholder="Auto si vide">
               </div>
             </div>
             <div class="actions">
               <button id="refreshClosureBtn" class="btn ghost" type="button">Actualiser</button>
-              <button id="printClosureBtn" class="btn primary" type="button">Imprimer la clôture</button>
-              <button id="saveClosureBtn" class="btn" type="button">Valider la clôture</button>
+              <button id="printClosureBtn" class="btn primary" type="button">Imprimer la clÃ´ture</button>
+              <button id="saveClosureBtn" class="btn" type="button">Valider la clÃ´ture</button>
             </div>
             <div id="closureAlerts" class="alert-stack"></div>
           </div>
@@ -826,7 +826,7 @@
                 <div class="table-wrap">
                   <table>
                     <thead>
-                      <tr><th>Rubrique</th><th>Montant</th><th>Opérations</th></tr>
+                      <tr><th>Rubrique</th><th>Montant</th><th>OpÃ©rations</th></tr>
                     </thead>
                     <tbody id="closureDiversBody"></tbody>
                   </table>
@@ -836,7 +836,7 @@
           </div>
 
           <div class="panel">
-            <h2>Détail de la clôture</h2>
+            <h2>DÃ©tail de la clÃ´ture</h2>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -862,7 +862,7 @@
           <div class="section-title">
             <div>
               <h1>Consultation EVJ</h1>
-              <p>Recherchez les opérations par date et par agent.</p>
+              <p>Recherchez les opÃ©rations par date et par agent.</p>
             </div>
           </div>
           <div class="panel">
@@ -879,10 +879,10 @@
                 <label for="paymentFilter">Paiement</label>
                 <select id="paymentFilter">
                   <option value="">Tous</option>
-                  <option>Espèces</option>
+                  <option>EspÃ¨ces</option>
                   <option>TPE</option>
                   <option>En Compte</option>
-                  <option>Chèque</option>
+                  <option>ChÃ¨que</option>
                 </select>
               </div>
             </div>
@@ -892,7 +892,7 @@
             </div>
           </div>
           <div class="panel">
-            <h2>Résultat</h2>
+            <h2>RÃ©sultat</h2>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -910,7 +910,7 @@
           <div class="section-title">
             <div>
               <h1>Facturation clients en compte</h1>
-              <p>Préparez un état standard pour les clients à facturer.</p>
+              <p>PrÃ©parez un Ã©tat standard pour les clients Ã  facturer.</p>
             </div>
           </div>
           <div class="panel">
@@ -928,7 +928,7 @@
                 <select id="factClient"></select>
               </div>
               <div class="field">
-                <label for="factNumber">N° facture</label>
+                <label for="factNumber">NÂ° facture</label>
                 <input id="factNumber" type="text" placeholder="Auto si vide">
               </div>
             </div>
@@ -939,7 +939,7 @@
             <div id="factAlerts" class="alert-stack"></div>
           </div>
           <div class="panel">
-            <h2>Opérations en compte</h2>
+            <h2>OpÃ©rations en compte</h2>
             <div id="factStats" class="stat-grid"></div>
             <div class="table-wrap" style="margin-top:16px;">
               <table>
@@ -956,7 +956,7 @@
           <div class="section-title">
             <div>
               <h1>Attestation de paiement</h1>
-              <p>Générez une attestation simple pour les paiements directs.</p>
+              <p>GÃ©nÃ©rez une attestation simple pour les paiements directs.</p>
             </div>
           </div>
           <div class="panel">
@@ -975,7 +975,7 @@
             </div>
           </div>
           <div class="panel">
-            <h2>Opérations disponibles</h2>
+            <h2>OpÃ©rations disponibles</h2>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -991,7 +991,7 @@
           <div class="section-title">
             <div>
               <h1>Rapport mensuel</h1>
-              <p>Vue mensuelle des opérations et des montants.</p>
+              <p>Vue mensuelle des opÃ©rations et des montants.</p>
             </div>
           </div>
           <div class="panel">
@@ -1011,12 +1011,12 @@
             </div>
           </div>
           <div class="panel">
-            <h2>Synthèse mensuelle</h2>
+            <h2>SynthÃ¨se mensuelle</h2>
             <div id="monthlyStats" class="stat-grid"></div>
             <div class="table-wrap" style="margin-top:16px;">
               <table>
                 <thead>
-                  <tr><th>N°</th><th>Date</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr>
+                  <tr><th>NÂ°</th><th>Date</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr>
                 </thead>
                 <tbody id="monthlyBody"></tbody>
               </table>
@@ -1028,7 +1028,7 @@
           <div class="section-title">
             <div>
               <h1>Gestion clients</h1>
-              <p>Ajoutez les clients utilisés pour les comptes et la facturation.</p>
+              <p>Ajoutez les clients utilisÃ©s pour les comptes et la facturation.</p>
             </div>
           </div>
           <div class="panel">
@@ -1073,7 +1073,7 @@
           <div class="panel">
             <div class="grid two">
               <div class="field">
-                <label for="statPeriod">Période</label>
+                <label for="statPeriod">PÃ©riode</label>
                 <select id="statPeriod">
                   <option value="today">Aujourd'hui</option>
                   <option value="week">7 derniers jours</option>
@@ -1090,7 +1090,7 @@
             </div>
           </div>
           <div class="panel">
-            <h2>Synthèse</h2>
+            <h2>SynthÃ¨se</h2>
             <div id="statsCards" class="stat-grid"></div>
           </div>
           <div class="panel">
@@ -1098,7 +1098,7 @@
             <div class="table-wrap">
               <table>
                 <thead>
-                  <tr><th>Rang</th><th>Client</th><th>Montant</th><th>Opérations</th></tr>
+                  <tr><th>Rang</th><th>Client</th><th>Montant</th><th>OpÃ©rations</th></tr>
                 </thead>
                 <tbody id="topClientsBody"></tbody>
               </table>
@@ -1114,7 +1114,7 @@
       <h2 class="modal-title">Attestation de paiement</h2>
       <div class="grid">
         <div class="field">
-          <label for="attestPassenger">Nom et prénom du passager</label>
+          <label for="attestPassenger">Nom et prÃ©nom du passager</label>
           <input id="attestPassenger" type="text" placeholder="Nom complet">
         </div>
         <div class="field">
@@ -1158,12 +1158,11 @@
     const DIRECT_CLIENT = "CLIENT DIVERS / DE PASSAGE";
 
     const PROFILES = [
-     { initial: "HM", name: "Hamza Meddah",    role: "Directeur",  email: "hamza.meddah@gmail.com",        canEnter: true,  canSeeAll: true,  canManageClients: true,  canInvoice: true  },
-{ initial: "SB", name: "Sarah Bribi",      role: "Agent",      email: "sarabribi7@gmail.com",          canEnter: true,  canSeeAll: false, canManageClients: false, canInvoice: false },
-{ initial: "MM", name: "Moulai Méliza",    role: "Agent",      email: "moulai.meliza95@gmail.com",     canEnter: true,  canSeeAll: false, canManageClients: false, canInvoice: false },
-{ initial: "AB", name: "Abbas Boudouira",  role: "Comptable",  email: "boudouiraelabbas@gmail.com",    canEnter: false, canSeeAll: true,  canManageClients: true,  canInvoice: true  }
-    ];
-
+  { initial: "HM", name: "Hamza Meddah", role: "Directeur", email: "hamza.meddah@gmail.com", canEnter: true, canSeeAll: true, canManageClients: true, canInvoice: true },
+  { initial: "SB", name: "Sarah Bribi", role: "Agent", email: "sarabribi7@gmail.com", canEnter: true, canSeeAll: false, canManageClients: false, canInvoice: false },
+  { initial: "MM", name: "Moulai MÃ©liza", role: "Agent", email: "moulai.meliza95@gmail.com", canEnter: true, canSeeAll: false, canManageClients: false, canInvoice: false },
+  { initial: "AB", name: "Abbas Boudouira", role: "Comptable", email: "boudouiraelabbas@gmail.com", canEnter: false, canSeeAll: true, canManageClients: true, canInvoice: true }
+];
     const BASE_CLIENTS = [
       DIRECT_CLIENT,
       "AEROPORT", "ACD", "TPE", "SKY TOURS", "TAZMALT VOYAGES", "TVA TIZI OUZOU",
@@ -1189,8 +1188,8 @@
 
     const TX_LABELS = {
       "BILLET": "Billet vendu",
-      "CHANG BILLET": "Billet échangé",
-      "SSR BILLET": "SSR ajouté",
+      "CHANG BILLET": "Billet Ã©changÃ©",
+      "SSR BILLET": "SSR ajoutÃ©",
       "REMBOURSEMENT": "Remboursement"
     };
 
@@ -1300,13 +1299,13 @@
     function firebaseErrorMessage(error) {
       const code = error?.code || "";
       if (code.includes("invalid-credential") || code.includes("wrong-password") || code.includes("user-not-found")) {
-        return "Identifiant ou mot de passe incorrect. Vérifiez le compte Firebase du profil choisi.";
+        return "Identifiant ou mot de passe incorrect. VÃ©rifiez le compte Firebase du profil choisi.";
       }
       if (code.includes("permission-denied")) {
-        return "Firebase a refusé l'opération. Vérifiez les règles Firestore et que l'utilisateur est connecté.";
+        return "Firebase a refusÃ© l'opÃ©ration. VÃ©rifiez les rÃ¨gles Firestore et que l'utilisateur est connectÃ©.";
       }
       if (code.includes("failed-precondition")) {
-        return "Firebase demande un index. Cette version limite les requêtes complexes, mais vérifiez la console Firebase.";
+        return "Firebase demande un index. Cette version limite les requÃªtes complexes, mais vÃ©rifiez la console Firebase.";
       }
       if (code.includes("network") || code.includes("unavailable")) {
         return "Connexion Firebase indisponible. Utilisez le mode local de secours si besoin.";
@@ -1341,7 +1340,7 @@
         firebase.modules = { ...authMod, ...firestoreMod };
         firebase.available = true;
         storageMode = "firebase";
-        setStatus("Firebase prêt : connexion sécurisée par mot de passe", "ok");
+        setStatus("Firebase prÃªt : connexion sÃ©curisÃ©e par mot de passe", "ok");
 
         authMod.onAuthStateChanged(firebase.auth, async (user) => {
           if (!user) {
@@ -1353,7 +1352,7 @@
             await enterApp(profile, user, "firebase");
           } else {
             await authMod.signOut(firebase.auth);
-            showAlert("authAlerts", "Ce compte Firebase n'est pas rattaché à un profil EVJ.", "error");
+            showAlert("authAlerts", "Ce compte Firebase n'est pas rattachÃ© Ã  un profil EVJ.", "error");
           }
         });
       } catch (error) {
@@ -1400,7 +1399,7 @@
         return;
       }
       if (!password || password.length < 6) {
-        showAlert("authAlerts", "Entrez un mot de passe d'au moins 6 caractères.", "error");
+        showAlert("authAlerts", "Entrez un mot de passe d'au moins 6 caractÃ¨res.", "error");
         return;
       }
 
@@ -1424,14 +1423,14 @@
 
       if (!existingHash) {
         if (profile.initial !== "HM") {
-          throw new Error("Le premier mot de passe local doit être créé avec le profil directeur Hamza Meddah.");
+          throw new Error("Le premier mot de passe local doit Ãªtre crÃ©Ã© avec le profil directeur Hamza Meddah.");
         }
         if (password.length < 8) {
-          throw new Error("Pour initialiser le mode local directeur, utilisez au moins 8 caractères.");
+          throw new Error("Pour initialiser le mode local directeur, utilisez au moins 8 caractÃ¨res.");
         }
         authStore[profile.initial] = await sha256(password);
         writeJson(STORAGE_KEYS.localAuth, authStore);
-        showAlert("authAlerts", "Mode local initialisé pour le directeur sur cet ordinateur.", "info", 6000);
+        showAlert("authAlerts", "Mode local initialisÃ© pour le directeur sur cet ordinateur.", "info", 6000);
       } else {
         const hash = await sha256(password);
         if (hash !== existingHash) {
@@ -1483,7 +1482,7 @@
     function renderSidebar() {
       const items = [
         { id: "saisie", label: "Saisie EVJ", icon: "SA", show: currentProfile.canEnter },
-        { id: "cloture", label: "Clôture", icon: "CL", show: true },
+        { id: "cloture", label: "ClÃ´ture", icon: "CL", show: true },
         { id: "consultation", label: "Consultation", icon: "CO", show: true },
         { id: "facturation", label: "Facturation", icon: "FA", show: currentProfile.canInvoice },
         { id: "attestation", label: "Attestations", icon: "AT", show: true },
@@ -1645,7 +1644,7 @@
         return;
       }
       if (clientsCache.some((client) => client.name === name)) {
-        showAlert("clientAlerts", "Ce client existe déjà.", "error");
+        showAlert("clientAlerts", "Ce client existe dÃ©jÃ .", "error");
         return;
       }
 
@@ -1668,7 +1667,7 @@
           writeJson(STORAGE_KEYS.clients, localClients);
         }
         $("newClientName").value = "";
-        showAlert("clientAlerts", "Client ajouté.", "success");
+        showAlert("clientAlerts", "Client ajoutÃ©.", "success");
         await loadClients();
       } catch (error) {
         showAlert("clientAlerts", firebaseErrorMessage(error), "error", 7000);
@@ -1692,7 +1691,7 @@
       $("pnr").value = "";
       $("montant").value = "";
       $("fraisService").value = "";
-      $("typePaiement").value = "Espèces";
+      $("typePaiement").value = "EspÃ¨ces";
       $("agenceClient").value = DIRECT_CLIENT;
       $("entryNote").value = "";
       updateComputedTotal();
@@ -1712,7 +1711,7 @@
     function updatePaymentClientState() {
       const payment = $("typePaiement").value;
       const clientSelect = $("agenceClient");
-      if (payment === "Espèces") {
+      if (payment === "EspÃ¨ces") {
         clientSelect.value = DIRECT_CLIENT;
         clientSelect.disabled = true;
       } else {
@@ -1742,19 +1741,19 @@
         return;
       }
       if (!/^[A-Z0-9]{3,8}$/.test(pnr)) {
-        showAlert("entryAlerts", "PNR invalide : utilisez 3 à 8 lettres/chiffres.", "error");
+        showAlert("entryAlerts", "PNR invalide : utilisez 3 Ã  8 lettres/chiffres.", "error");
         return;
       }
       if (montant <= 0) {
-        showAlert("entryAlerts", "Le montant billet doit être supérieur à 0.", "error");
+        showAlert("entryAlerts", "Le montant billet doit Ãªtre supÃ©rieur Ã  0.", "error");
         return;
       }
       if (fraisService < 0) {
-        showAlert("entryAlerts", "Les frais service ne peuvent pas être négatifs.", "error");
+        showAlert("entryAlerts", "Les frais service ne peuvent pas Ãªtre nÃ©gatifs.", "error");
         return;
       }
       if (typePaiement === "En Compte" && (!client || client === DIRECT_CLIENT)) {
-        showAlert("entryAlerts", "Pour un paiement en compte, choisissez le client à facturer.", "error");
+        showAlert("entryAlerts", "Pour un paiement en compte, choisissez le client Ã  facturer.", "error");
         return;
       }
 
@@ -1768,7 +1767,7 @@
         montant,
         frais_service: fraisService,
         type_paiement: typePaiement,
-        agence_client: typePaiement === "Espèces" ? DIRECT_CLIENT : client,
+        agence_client: typePaiement === "EspÃ¨ces" ? DIRECT_CLIENT : client,
         type_transaction: typeTransaction,
         note: $("entryNote").value.trim(),
         heure: now.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
@@ -1777,7 +1776,7 @@
 
       try {
         await saveEntryToStore(entry);
-        showAlert("entryAlerts", "Entrée enregistrée.", "success");
+        showAlert("entryAlerts", "EntrÃ©e enregistrÃ©e.", "success");
         const savedDate = $("entryDate").value;
         resetEntryForm(false);
         $("entryDate").value = savedDate;
@@ -1803,8 +1802,8 @@
       const summary = {
         count: entries.length,
         txCounts: { "BILLET": 0, "CHANG BILLET": 0, "SSR BILLET": 0, "REMBOURSEMENT": 0 },
-        paymentTotals: { "Espèces": 0, "TPE": 0, "En Compte": 0, "Chèque": 0 },
-        paymentCounts: { "Espèces": 0, "TPE": 0, "En Compte": 0, "Chèque": 0 },
+        paymentTotals: { "EspÃ¨ces": 0, "TPE": 0, "En Compte": 0, "ChÃ¨que": 0 },
+        paymentCounts: { "EspÃ¨ces": 0, "TPE": 0, "En Compte": 0, "ChÃ¨que": 0 },
         accountClients: {},
         divers: {},
         total: 0,
@@ -1835,7 +1834,7 @@
           summary.accountClients[client].total += total;
           summary.accountClients[client].count += 1;
         } else {
-          const rub = payment === "Espèces" ? DIRECT_CLIENT : payment;
+          const rub = payment === "EspÃ¨ces" ? DIRECT_CLIENT : payment;
           if (!summary.divers[rub]) summary.divers[rub] = { total: 0, count: 0 };
           summary.divers[rub].total += total;
           summary.divers[rub].count += 1;
@@ -1848,11 +1847,11 @@
     function renderDayStats(entries) {
       const summary = summarizeEntries(entries);
       $("dayStats").innerHTML = [
-        { label: "Espèces", value: money(summary.paymentTotals["Espèces"]) },
+        { label: "EspÃ¨ces", value: money(summary.paymentTotals["EspÃ¨ces"]) },
         { label: "TPE", value: money(summary.paymentTotals["TPE"]) },
         { label: "En Compte", value: money(summary.paymentTotals["En Compte"]) },
-        { label: "Chèque", value: money(summary.paymentTotals["Chèque"]) },
-        { label: "Total général", value: money(summary.total) }
+        { label: "ChÃ¨que", value: money(summary.paymentTotals["ChÃ¨que"]) },
+        { label: "Total gÃ©nÃ©ral", value: money(summary.total) }
       ].map(statCard).join("");
     }
 
@@ -1865,7 +1864,7 @@
       if (!tbody) return;
       if (!entries.length) {
         const colSpan = options.actions ? 10 : 9;
-        tbody.innerHTML = `<tr><td class="empty" colspan="${colSpan}">Aucune opération</td></tr>`;
+        tbody.innerHTML = `<tr><td class="empty" colspan="${colSpan}">Aucune opÃ©ration</td></tr>`;
         return;
       }
 
@@ -1893,7 +1892,7 @@
 
     async function deleteEntry(id) {
       if (!id) return;
-      if (!confirm("Supprimer cette entrée ?")) return;
+      if (!confirm("Supprimer cette entrÃ©e ?")) return;
       try {
         await deleteEntryFromStore(id);
         await loadSaisieData();
@@ -1919,10 +1918,10 @@
       const summary = summarizeEntries(entries);
       $("closureStats").innerHTML = [
         { label: "Billets vendus", value: String(summary.txCounts["BILLET"] || 0) },
-        { label: "Billets échangés", value: String(summary.txCounts["CHANG BILLET"] || 0) },
-        { label: "SSR ajoutés", value: String(summary.txCounts["SSR BILLET"] || 0) },
+        { label: "Billets Ã©changÃ©s", value: String(summary.txCounts["CHANG BILLET"] || 0) },
+        { label: "SSR ajoutÃ©s", value: String(summary.txCounts["SSR BILLET"] || 0) },
         { label: "Remboursements", value: String(summary.txCounts["REMBOURSEMENT"] || 0) },
-        { label: "Total général", value: money(summary.total) }
+        { label: "Total gÃ©nÃ©ral", value: money(summary.total) }
       ].map(statCard).join("");
 
       const accountRows = Object.entries(summary.accountClients)
@@ -1944,7 +1943,7 @@
       clearAlerts("closureAlerts");
       await loadClosure();
       if (!lastClosureEntries.length) {
-        showAlert("closureAlerts", "Aucune opération à clôturer pour cette sélection.", "error");
+        showAlert("closureAlerts", "Aucune opÃ©ration Ã  clÃ´turer pour cette sÃ©lection.", "error");
         return;
       }
       const summary = summarizeEntries(lastClosureEntries);
@@ -1963,7 +1962,7 @@
           entries_count: lastClosureEntries.length
         });
         $("closureReference").value = reference;
-        showAlert("closureAlerts", "Clôture validée.", "success");
+        showAlert("closureAlerts", "ClÃ´ture validÃ©e.", "success");
       } catch (error) {
         showAlert("closureAlerts", firebaseErrorMessage(error), "error", 8000);
       }
@@ -1975,7 +1974,7 @@
 
     function printClosure() {
       if (!lastClosureEntries.length) {
-        showAlert("closureAlerts", "Aucune opération à imprimer. Actualisez d'abord la clôture.", "error");
+        showAlert("closureAlerts", "Aucune opÃ©ration Ã  imprimer. Actualisez d'abord la clÃ´ture.", "error");
         return;
       }
       const date = $("closureDate").value;
@@ -1983,7 +1982,7 @@
       const reference = $("closureReference").value.trim() || closureReference(date, agent);
       const summary = summarizeEntries(lastClosureEntries);
       const agentLabel = agent ? `${agent} - ${profileByInitial(agent)?.name || ""}` : "Tous les agents";
-      openPrintWindow("Clôture EVJ", buildClosurePrintHtml({ date, agentLabel, reference, summary, entries: lastClosureEntries }));
+      openPrintWindow("ClÃ´ture EVJ", buildClosurePrintHtml({ date, agentLabel, reference, summary, entries: lastClosureEntries }));
     }
 
     function rowsFromObject(obj, emptyText, formatter) {
@@ -2022,51 +2021,51 @@
           <div class="meta">
             <div><strong>Date :</strong> ${formatDate(date)}</div>
             <div><strong>Agent :</strong> ${escapeHtml(agentLabel)}</div>
-            <div><strong>Edité par :</strong> ${escapeHtml(currentProfile.name)} (${escapeHtml(currentProfile.role)})</div>
+            <div><strong>EditÃ© par :</strong> ${escapeHtml(currentProfile.name)} (${escapeHtml(currentProfile.role)})</div>
           </div>
-          <h2>Volume des opérations</h2>
+          <h2>Volume des opÃ©rations</h2>
           <table>
             <thead><tr><th>Rubrique</th><th class="right">Nombre</th></tr></thead>
             <tbody>
               <tr><td>Billets vendus</td><td class="right">${summary.txCounts["BILLET"] || 0}</td></tr>
-              <tr><td>Billets échangés</td><td class="right">${summary.txCounts["CHANG BILLET"] || 0}</td></tr>
-              <tr><td>SSR ajoutés</td><td class="right">${summary.txCounts["SSR BILLET"] || 0}</td></tr>
+              <tr><td>Billets Ã©changÃ©s</td><td class="right">${summary.txCounts["CHANG BILLET"] || 0}</td></tr>
+              <tr><td>SSR ajoutÃ©s</td><td class="right">${summary.txCounts["SSR BILLET"] || 0}</td></tr>
               <tr><td>Remboursements</td><td class="right">${summary.txCounts["REMBOURSEMENT"] || 0}</td></tr>
             </tbody>
           </table>
           <h2>Encaissements</h2>
           <table>
-            <thead><tr><th>Mode paiement</th><th class="right">Opérations</th><th class="right">Montant</th></tr></thead>
+            <thead><tr><th>Mode paiement</th><th class="right">OpÃ©rations</th><th class="right">Montant</th></tr></thead>
             <tbody>
-              <tr><td>Espèces</td><td class="right">${summary.paymentCounts["Espèces"] || 0}</td><td class="right">${money(summary.paymentTotals["Espèces"])}</td></tr>
+              <tr><td>EspÃ¨ces</td><td class="right">${summary.paymentCounts["EspÃ¨ces"] || 0}</td><td class="right">${money(summary.paymentTotals["EspÃ¨ces"])}</td></tr>
               <tr><td>TPE</td><td class="right">${summary.paymentCounts["TPE"] || 0}</td><td class="right">${money(summary.paymentTotals["TPE"])}</td></tr>
               <tr><td>En Compte</td><td class="right">${summary.paymentCounts["En Compte"] || 0}</td><td class="right">${money(summary.paymentTotals["En Compte"])}</td></tr>
-              <tr><td>Chèque</td><td class="right">${summary.paymentCounts["Chèque"] || 0}</td><td class="right">${money(summary.paymentTotals["Chèque"])}</td></tr>
-              <tr class="total-row"><td>Total général</td><td class="right">${summary.count}</td><td class="right">${money(summary.total)}</td></tr>
+              <tr><td>ChÃ¨que</td><td class="right">${summary.paymentCounts["ChÃ¨que"] || 0}</td><td class="right">${money(summary.paymentTotals["ChÃ¨que"])}</td></tr>
+              <tr class="total-row"><td>Total gÃ©nÃ©ral</td><td class="right">${summary.count}</td><td class="right">${money(summary.total)}</td></tr>
             </tbody>
           </table>
           <h2>Clients en compte</h2>
           <table>
-            <thead><tr><th>Client</th><th class="right">Opérations</th><th class="right">Montant</th></tr></thead>
+            <thead><tr><th>Client</th><th class="right">OpÃ©rations</th><th class="right">Montant</th></tr></thead>
             <tbody>${accountRows}</tbody>
           </table>
           <h2>Client divers ou de passage</h2>
           <table>
-            <thead><tr><th>Rubrique</th><th class="right">Opérations</th><th class="right">Montant</th></tr></thead>
+            <thead><tr><th>Rubrique</th><th class="right">OpÃ©rations</th><th class="right">Montant</th></tr></thead>
             <tbody>${diversRows}</tbody>
           </table>
           <div class="signatures">
             <div>Agent / Responsable</div>
-            <div>Comptabilité</div>
+            <div>ComptabilitÃ©</div>
           </div>
         </section>
         <section class="sheet page-break">
-          ${printHeader("Détail des opérations", reference)}
+          ${printHeader("DÃ©tail des opÃ©rations", reference)}
           <table class="small">
             <thead>
-              <tr><th>N°</th><th>Heure</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr>
+              <tr><th>NÂ°</th><th>Heure</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr>
             </thead>
-            <tbody>${detailRows || '<tr><td colspan="10" class="empty">Aucune opération</td></tr>'}</tbody>
+            <tbody>${detailRows || '<tr><td colspan="10" class="empty">Aucune opÃ©ration</td></tr>'}</tbody>
           </table>
         </section>
       `;
@@ -2088,7 +2087,7 @@
     function renderConsultation(entries) {
       const tbody = $("consultBody");
       if (!entries.length) {
-        tbody.innerHTML = '<tr><td class="empty" colspan="10">Aucun résultat</td></tr>';
+        tbody.innerHTML = '<tr><td class="empty" colspan="10">Aucun rÃ©sultat</td></tr>';
         return;
       }
       tbody.innerHTML = entries.map((entry) => `
@@ -2109,7 +2108,7 @@
 
     function printConsultation() {
       if (!lastConsultEntries.length) {
-        alert("Aucun résultat à imprimer.");
+        alert("Aucun rÃ©sultat Ã  imprimer.");
         return;
       }
       const rows = lastConsultEntries.map((entry, index) => `
@@ -2119,7 +2118,7 @@
         <section class="sheet">
           ${printHeader("Consultation EVJ", `CONS-${($("consultDate").value || "").replaceAll("-", "")}`)}
           <table class="small">
-            <thead><tr><th>N°</th><th>Date</th><th>Heure</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr></thead>
+            <thead><tr><th>NÂ°</th><th>Date</th><th>Heure</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr></thead>
             <tbody>${rows}</tbody>
           </table>
         </section>
@@ -2147,15 +2146,15 @@
     function renderFacturation(entries) {
       const summary = summarizeEntries(entries);
       $("factStats").innerHTML = [
-        { label: "Total à facturer", value: money(summary.total) },
-        { label: "Opérations", value: String(summary.count) },
+        { label: "Total Ã  facturer", value: money(summary.total) },
+        { label: "OpÃ©rations", value: String(summary.count) },
         { label: "Montant billets", value: money(summary.montantOnly) },
         { label: "FSCE", value: money(summary.fsce) },
         { label: "Clients", value: String(Object.keys(summary.accountClients).length) }
       ].map(statCard).join("");
 
       if (!entries.length) {
-        $("factBody").innerHTML = '<tr><td class="empty" colspan="8">Aucune opération en compte</td></tr>';
+        $("factBody").innerHTML = '<tr><td class="empty" colspan="8">Aucune opÃ©ration en compte</td></tr>';
         return;
       }
       $("factBody").innerHTML = entries.map((entry) => `
@@ -2174,7 +2173,7 @@
 
     function printFacturation() {
       if (!lastFactEntries.length) {
-        showAlert("factAlerts", "Aucune opération à facturer.", "error");
+        showAlert("factAlerts", "Aucune opÃ©ration Ã  facturer.", "error");
         return;
       }
       const client = $("factClient").value || "Tous clients en compte";
@@ -2194,13 +2193,13 @@
           ${printHeader("Facture / Etat client en compte", number)}
           <div class="meta">
             <div><strong>Client :</strong> ${escapeHtml(client)}</div>
-            <div><strong>Période :</strong> ${formatDate(start)} au ${formatDate(end)}</div>
+            <div><strong>PÃ©riode :</strong> ${formatDate(start)} au ${formatDate(end)}</div>
             <div><strong>Total :</strong> ${money(summary.total)}</div>
           </div>
           <table class="small">
-            <thead><tr><th>N°</th><th>Date</th><th>PNR</th><th>Agent</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th></tr></thead>
+            <thead><tr><th>NÂ°</th><th>Date</th><th>PNR</th><th>Agent</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th></tr></thead>
             <tbody>${rows}</tbody>
-            <tfoot><tr class="total-row"><td colspan="7">Total à facturer</td><td class="right">${money(summary.total)}</td></tr></tfoot>
+            <tfoot><tr class="total-row"><td colspan="7">Total Ã  facturer</td><td class="right">${money(summary.total)}</td></tr></tfoot>
           </table>
           <div class="signatures"><div>Service commercial</div><div>Client</div></div>
         </section>
@@ -2225,7 +2224,7 @@
 
     function renderAttestations(entries) {
       if (!entries.length) {
-        $("attestBody").innerHTML = '<tr><td class="empty" colspan="7">Aucune opération disponible</td></tr>';
+        $("attestBody").innerHTML = '<tr><td class="empty" colspan="7">Aucune opÃ©ration disponible</td></tr>';
         return;
       }
       $("attestBody").innerHTML = entries.map((entry) => `
@@ -2236,7 +2235,7 @@
           <td>${displayTotal(entry)}</td>
           <td>${escapeHtml(entry.type_paiement || "")}</td>
           <td>${escapeHtml(entry.agence_client || "")}</td>
-          <td class="no-print"><button class="btn small" data-attest-id="${escapeHtml(entry.id)}" type="button">Préparer</button></td>
+          <td class="no-print"><button class="btn small" data-attest-id="${escapeHtml(entry.id)}" type="button">PrÃ©parer</button></td>
         </tr>
       `).join("");
       $("attestBody").querySelectorAll("[data-attest-id]").forEach((button) => {
@@ -2264,20 +2263,20 @@
       const passenger = $("attestPassenger").value.trim();
       if (!entry) return;
       if (!passenger) {
-        alert("Entrez le nom et prénom du passager.");
+        alert("Entrez le nom et prÃ©nom du passager.");
         return;
       }
       const reference = `AT-${entry.date?.replaceAll("-", "") || localDateInput().replaceAll("-", "")}-${entry.pnr}`;
       openPrintWindow("Attestation de paiement", `
         <section class="sheet">
           ${printHeader("Attestation de paiement", reference)}
-          <p class="paragraph">Nous attestons avoir reçu le paiement relatif à l'opération ci-dessous.</p>
+          <p class="paragraph">Nous attestons avoir reÃ§u le paiement relatif Ã  l'opÃ©ration ci-dessous.</p>
           <table>
             <tbody>
               <tr><th>Passager</th><td>${escapeHtml(passenger)}</td></tr>
               <tr><th>PNR</th><td>${escapeHtml(entry.pnr || "")}</td></tr>
               <tr><th>Date</th><td>${formatDate(entry.date)}</td></tr>
-              <tr><th>Type opération</th><td>${escapeHtml(TX_LABELS[entry.type_transaction] || entry.type_transaction || "")}</td></tr>
+              <tr><th>Type opÃ©ration</th><td>${escapeHtml(TX_LABELS[entry.type_transaction] || entry.type_transaction || "")}</td></tr>
               <tr><th>Mode paiement</th><td>${escapeHtml(entry.type_paiement || "")}</td></tr>
               <tr><th>Montant</th><td><strong>${displayTotal(entry)}</strong></td></tr>
             </tbody>
@@ -2303,14 +2302,14 @@
       const summary = summarizeEntries(entries);
       $("monthlyStats").innerHTML = [
         { label: "Total mensuel", value: money(summary.total) },
-        { label: "Opérations", value: String(summary.count) },
+        { label: "OpÃ©rations", value: String(summary.count) },
         { label: "Billets vendus", value: String(summary.txCounts["BILLET"] || 0) },
         { label: "Echanges", value: String(summary.txCounts["CHANG BILLET"] || 0) },
         { label: "SSR", value: String(summary.txCounts["SSR BILLET"] || 0) }
       ].map(statCard).join("");
 
       if (!entries.length) {
-        $("monthlyBody").innerHTML = '<tr><td class="empty" colspan="10">Aucun résultat</td></tr>';
+        $("monthlyBody").innerHTML = '<tr><td class="empty" colspan="10">Aucun rÃ©sultat</td></tr>';
         return;
       }
       $("monthlyBody").innerHTML = entries.map((entry, index) => `
@@ -2331,7 +2330,7 @@
 
     function printMonthly() {
       if (!lastMonthlyEntries.length) {
-        alert("Aucun rapport mensuel à imprimer.");
+        alert("Aucun rapport mensuel Ã  imprimer.");
         return;
       }
       const month = $("monthSelect").value;
@@ -2345,10 +2344,10 @@
           <div class="meta">
             <div><strong>Mois :</strong> ${escapeHtml(month)}</div>
             <div><strong>Total :</strong> ${money(summary.total)}</div>
-            <div><strong>Opérations :</strong> ${summary.count}</div>
+            <div><strong>OpÃ©rations :</strong> ${summary.count}</div>
           </div>
           <table class="small">
-            <thead><tr><th>N°</th><th>Date</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr></thead>
+            <thead><tr><th>NÂ°</th><th>Date</th><th>Agent</th><th>PNR</th><th>Type</th><th>Montant</th><th>FSCE</th><th>Total</th><th>Paiement</th><th>Client</th></tr></thead>
             <tbody>${rows}</tbody>
           </table>
         </section>
@@ -2373,10 +2372,10 @@
         const summary = summarizeEntries(entries);
         $("statsCards").innerHTML = [
           { label: "Total ventes", value: money(summary.total) },
-          { label: "Opérations", value: String(summary.count) },
+          { label: "OpÃ©rations", value: String(summary.count) },
           { label: "Moyenne", value: money(summary.count ? Math.round(summary.total / summary.count) : 0) },
           { label: "En compte", value: money(summary.paymentTotals["En Compte"]) },
-          { label: "Espèces", value: money(summary.paymentTotals["Espèces"]) }
+          { label: "EspÃ¨ces", value: money(summary.paymentTotals["EspÃ¨ces"]) }
         ].map(statCard).join("");
 
         const clients = {};
@@ -2392,7 +2391,7 @@
           .slice(0, 10)
           .map(([client, data], index) => `<tr><td>${index + 1}</td><td>${escapeHtml(client)}</td><td>${money(data.total)}</td><td>${data.count}</td></tr>`)
           .join("");
-        $("topClientsBody").innerHTML = rows || '<tr><td class="empty" colspan="4">Aucune donnée</td></tr>';
+        $("topClientsBody").innerHTML = rows || '<tr><td class="empty" colspan="4">Aucune donnÃ©e</td></tr>';
       } catch (error) {
         showAlert("entryAlerts", firebaseErrorMessage(error), "error", 8000);
       }
@@ -2423,7 +2422,7 @@
     function openPrintWindow(title, bodyHtml) {
       const win = window.open("", "_blank");
       if (!win) {
-        alert("Le navigateur a bloqué la fenêtre d'impression.");
+        alert("Le navigateur a bloquÃ© la fenÃªtre d'impression.");
         return;
       }
       win.document.write(`
